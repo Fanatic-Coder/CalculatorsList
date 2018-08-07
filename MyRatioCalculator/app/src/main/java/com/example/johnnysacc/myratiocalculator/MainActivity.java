@@ -1,6 +1,7 @@
 package com.example.johnnysacc.myratiocalculator;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -46,7 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 String strValueC = Ratio_C.getText().toString();
                 String strValueD = Ratio_D.getText().toString();
 
-                if (strValueD.equals("")) {
+                if(strValueD.equals("") && strValueC.equals("") || strValueA.equals("") || strValueB.equals("")) {
+                    Snackbar.make(view, "Please enter a number!", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                } else if (strValueD.equals("")) {
                     float valueA = Float.parseFloat(strValueA);
                     float valueB = Float.parseFloat(strValueB);
                     float valueC = Float.parseFloat(strValueC);
@@ -61,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     String display = "Answer:\n   Ratio A: " + valueA + "  Ratio B: " + valueB + "  Missing Number A: " + totalC + "  Number B: " + valueD;
                     Display_Scrn.setText(String.valueOf(display));
                 }
-
             }
         });
     }
