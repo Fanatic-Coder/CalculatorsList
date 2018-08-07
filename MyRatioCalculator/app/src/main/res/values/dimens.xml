@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_Size">20sp</dimen>
+    <dimen name="Ratio_Input_Size">150dp</dimen>
+    <dimen name="Ratio_PlainText_Size">20dp</dimen>
+    <dimen name="Vertical_Space">34dp</dimen>
+    <dimen name="Horizontal_Space">10dp</dimen>
+    <dimen name="Calc_Text_Size">16sp</dimen>
+    <dimen name="Calc_Btn_Width">140dp</dimen>
+</resources>
