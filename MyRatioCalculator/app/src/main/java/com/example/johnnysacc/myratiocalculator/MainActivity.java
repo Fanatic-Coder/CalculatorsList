@@ -41,17 +41,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                float valueA = Float.parseFloat(Ratio_A.getText().toString());
-                float valueB = Float.parseFloat(Ratio_B.getText().toString());
-                float valueC = Float.parseFloat(Ratio_C.getText().toString());
-                float valueD = Float.parseFloat(Ratio_D.getText().toString());
                 String strValueA = Ratio_A.getText().toString();
+                String strValueB = Ratio_B.getText().toString();
+                String strValueC = Ratio_C.getText().toString();
+                String strValueD = Ratio_D.getText().toString();
 
-                if (valueD == 0.0f) {
+                if (strValueD.equals("")) {
+                    float valueA = Float.parseFloat(strValueA);
+                    float valueB = Float.parseFloat(strValueB);
+                    float valueC = Float.parseFloat(strValueC);
                     float totalD = valueC * (valueB / valueA);
                     String display = "Answer:\n   Ratio A: " + valueA + "  Ratio B: " + valueB + "  Number A: " + valueC + "  Missing Number B: " + totalD;
                     Display_Scrn.setText(String.valueOf(display));
-                } else if (valueC == 0.0f) {
+                } else if (strValueC.equals("")) {
+                    float valueA = Float.parseFloat(strValueA);
+                    float valueB = Float.parseFloat(strValueB);
+                    float valueD = Float.parseFloat(strValueD);
                     float totalC = valueB * (valueA / valueB);
                     String display = "Answer:\n   Ratio A: " + valueA + "  Ratio B: " + valueB + "  Missing Number A: " + totalC + "  Number B: " + valueD;
                     Display_Scrn.setText(String.valueOf(display));
