@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,19 +53,19 @@ public class MainActivity extends AppCompatActivity {
                 if(strValueD.equals("") && strValueC.equals("") || strValueA.equals("") || strValueB.equals("")) {
                     Snackbar.make(view, "Please enter a number!", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
-                } else if (strValueD.equals("")) {
+                } else if (strValueD.equals("") || strValueD.equals("0")) {
                     float valueA = Float.parseFloat(strValueA);
                     float valueB = Float.parseFloat(strValueB);
                     float valueC = Float.parseFloat(strValueC);
                     float totalD = valueC * (valueB / valueA);
-                    String display = "Answer:\n   Ratio A: " + valueA + "  Ratio B: " + valueB + "  Number A: " + valueC + "  Missing Number B: " + totalD;
+                    String display = "Answer:\n   Ratio A: " + valueA + "  Ratio B: " + valueB + "  \n   Number A: " + valueC + "  Missing Number B: " + totalD;
                     Display_Scrn.setText(String.valueOf(display));
-                } else if (strValueC.equals("")) {
+                } else if (strValueC.equals("") || strValueC.equals("0")) {
                     float valueA = Float.parseFloat(strValueA);
                     float valueB = Float.parseFloat(strValueB);
                     float valueD = Float.parseFloat(strValueD);
                     float totalC = valueB * (valueA / valueB);
-                    String display = "Answer:\n   Ratio A: " + valueA + "  Ratio B: " + valueB + "  Missing Number A: " + totalC + "  Number B: " + valueD;
+                    String display = "Answer:\n   Ratio A: " + valueA + "  Ratio B: " + valueB + "  \n   Missing Number A: " + totalC + "  Number B: " + valueD;
                     Display_Scrn.setText(String.valueOf(display));
                 }
             }
