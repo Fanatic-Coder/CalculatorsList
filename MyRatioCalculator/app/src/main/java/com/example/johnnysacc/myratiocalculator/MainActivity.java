@@ -21,13 +21,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Calculate();
+    }
+
+    private void Calculate(){
         final EditText Ratio_A = findViewById(R.id.Ratio_Value_A);
         final EditText Ratio_B = findViewById(R.id.Ratio_Value_B);
         final EditText Ratio_C = findViewById(R.id.Ratio_Value_C);
         final EditText Ratio_D = findViewById(R.id.Ratio_Value_D);
         final TextView Display_Scrn = findViewById(R.id.DisplayScreen);
 
-        /*
+        /* Just a code for reference when needed
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         }); */
-        //Calculate();
+
         Button CalcBtn = findViewById(R.id.CalculateButton);
         CalcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,25 +72,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    /*private void Calculate(){
-        Button CalcBtn = (Button) findViewById(R.id.CalculateButton);
-        CalcBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int valueA = Integer.parseInt(Ratio_A.getText().toString());
-                int valueB = Integer.parseInt(Ratio_B.getText().toString());
-                int valueC = Integer.parseInt(Ratio_C.getText().toString());
-                int valueD = Integer.parseInt(Ratio_D.getText().toString());
-                int totalD = valueC * (valueB / valueA);
-                Display_Scrn.setText(String.valueOf(totalD));
-
-
-
-            }
-        });
-
-    } */
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
