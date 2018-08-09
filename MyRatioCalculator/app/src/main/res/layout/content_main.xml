@@ -54,7 +54,7 @@
         android:textSize="@dimen/text_Size" />
 
     <EditText
-        android:id="@+id/Ratio_Value_C"
+        android:id="@+id/Number_Value_A"
         android:layout_width="@dimen/Ratio_Input_Size"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/ratio_Symbol2"
@@ -69,10 +69,10 @@
         android:textSize="@dimen/text_Size" />
 
     <EditText
-        android:id="@+id/Ratio_Value_D"
+        android:id="@+id/Number_Value_B"
         android:layout_width="@dimen/Ratio_Input_Size"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/Ratio_Value_C"
+        android:layout_alignTop="@+id/Number_Value_A"
         android:layout_toEndOf="@+id/ratio_Symbol2"
         android:layout_toRightOf="@id/ratio_Symbol2"
         android:ems="10"
