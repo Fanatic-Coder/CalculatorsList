@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorRatioInput">#3F51B5</color>
-    <color name="colorCalculateButton">#3F51B5</color>
+    <color name="colorCalculateButton">#ff0000</color>
     <color name="colorCalculateText">#ffffff</color>
     <color name="colorDisplayScrnBckgr">#cccccc</color>
     <color name="colorDisplayScrnText">#000000</color>
