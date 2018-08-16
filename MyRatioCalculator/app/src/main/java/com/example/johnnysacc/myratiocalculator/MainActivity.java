@@ -50,9 +50,15 @@ public class MainActivity extends AppCompatActivity {
                 String strNumberA = Number_A.getText().toString();
                 String strNumberB = Number_B.getText().toString();
 
-                if(strNumberB.equals("") && strNumberA.equals("") || strRatioA.equals("") || strRatioB.equals("")) {
+                if(strRatioA.equals("") && strNumberA.equals("") || strRatioB.equals("") && strNumberB.equals("")) {
+                    Snackbar.make(view, "Please enter a number and ratio!", Snackbar.LENGTH_LONG)
+                            .show();
+                } else if(strNumberA.equals("") && strNumberB.equals("")) {
                     Snackbar.make(view, "Please enter a number!", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                            .show();
+                } else if(strRatioA.equals("") || strRatioB.equals("")) {
+                    Snackbar.make(view, "Please enter a ratio!", Snackbar.LENGTH_LONG)
+                            .show();
                 } else if (strNumberB.equals("") || strNumberB.equals("0")) {
                     float RatioA = Float.parseFloat(strRatioA);
                     float RatioB = Float.parseFloat(strRatioB);
