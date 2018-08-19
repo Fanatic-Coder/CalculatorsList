@@ -63,6 +63,9 @@ public class MainActivity extends AppCompatActivity {
                     answerNumB(strRatioA, strRatioB, strNumberA, Display_Scrn);
                 } else if (strNumberA.equals("") || strNumberA.equals("0")) {
                     answerNumA(strRatioA, strRatioB, strNumberB, Display_Scrn);
+                } else if(!strNumberA.equals("") && !strNumberB.equals("")){
+                    Snackbar.make(view, "Please leave one number empty to calculate!", Snackbar.LENGTH_LONG)
+                            .show();
                 }
             }
         });
