@@ -60,22 +60,30 @@ public class MainActivity extends AppCompatActivity {
                     Snackbar.make(view, "Please enter a ratio!", Snackbar.LENGTH_LONG)
                             .show();
                 } else if (strNumberB.equals("") || strNumberB.equals("0")) {
-                    float RatioA = Float.parseFloat(strRatioA);
-                    float RatioB = Float.parseFloat(strRatioB);
-                    float NumberA = Float.parseFloat(strNumberA);
-                    float totalNumB = NumberA * (RatioB / RatioA);
-                    String display = "Answer:\n   Ratio A: " + RatioA + "  Ratio B: " + RatioB + "  \n   Number A: " + NumberA + "  Missing Number B: " + totalNumB;
-                    Display_Scrn.setText(String.valueOf(display));
+                    answerNumB(strRatioA, strRatioB, strNumberA, Display_Scrn);
                 } else if (strNumberA.equals("") || strNumberA.equals("0")) {
-                    float RatioA = Float.parseFloat(strRatioA);
-                    float RatioB = Float.parseFloat(strRatioB);
-                    float NumberB = Float.parseFloat(strNumberB);
-                    float totalNumA = NumberB * (RatioA / RatioB);
-                    String display = "Answer:\n   Ratio A: " + RatioA + "  Ratio B: " + RatioB + "  \n   Missing Number A: " + totalNumA + "  Number B: " + NumberB;
-                    Display_Scrn.setText(String.valueOf(display));
+                    answerNumA(strRatioA, strRatioB, strNumberB, Display_Scrn);
                 }
             }
         });
+    }
+
+    private void answerNumA (String strRatioA, String strRatioB, String strNumberB, TextView Display_Scrn) {
+        float RatioA = Float.parseFloat(strRatioA);
+        float RatioB = Float.parseFloat(strRatioB);
+        float NumberB = Float.parseFloat(strNumberB);
+        float totalNumA = NumberB * (RatioA / RatioB);
+        String display = "Answer:\n   Ratio A: " + RatioA + "  Ratio B: " + RatioB + "  \n   Missing Number A: " + totalNumA + "  Number B: " + NumberB;
+        Display_Scrn.setText(String.valueOf(display));
+    }
+
+    private void answerNumB (String strRatioA, String strRatioB, String strNumberA, TextView Display_Scrn) {
+        float RatioA = Float.parseFloat(strRatioA);
+        float RatioB = Float.parseFloat(strRatioB);
+        float NumberA = Float.parseFloat(strNumberA);
+        float totalNumB = NumberA * (RatioB / RatioA);
+        String display = "Answer:\n   Ratio A: " + RatioA + "  Ratio B: " + RatioB + "  \n   Number A: " + NumberA + "  Missing Number B: " + totalNumB;
+        Display_Scrn.setText(String.valueOf(display));
     }
 
     @Override
