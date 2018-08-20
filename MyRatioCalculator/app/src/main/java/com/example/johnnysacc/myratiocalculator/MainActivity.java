@@ -1,17 +1,18 @@
 package com.example.johnnysacc.myratiocalculator;
 
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
+//import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private boolean changeText = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         final EditText Ratio_B = findViewById(R.id.Ratio_Value_B);
         final EditText Number_A = findViewById(R.id.Number_Value_A);
         final EditText Number_B = findViewById(R.id.Number_Value_B);
-        final TextView Display_Scrn = findViewById(R.id.DisplayScreen);
+        //final TextView Display_Scrn = findViewById(R.id.DisplayScreen);
+
 
         /* Just a code for reference when needed
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -40,53 +42,72 @@ public class MainActivity extends AppCompatActivity {
             }
         }); */
 
-        Button CalcBtn = findViewById(R.id.CalculateButton);
-        CalcBtn.setOnClickListener(new View.OnClickListener() {
+        numberAListener(Number_A, Number_B, Ratio_A, Ratio_B);
+        numberBListener(Number_A, Number_B, Ratio_A, Ratio_B);
+    }
+
+    private void numberAListener (final EditText Number_A, final EditText Number_B, final EditText Ratio_A, final EditText Ratio_B) {
+
+
+        Number_A.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View view) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                String strRatioA = Ratio_A.getText().toString();
-                String strRatioB = Ratio_B.getText().toString();
-                String strNumberA = Number_A.getText().toString();
-                String strNumberB = Number_B.getText().toString();
+            }
 
-                if(strRatioA.equals("") && strNumberA.equals("") || strRatioB.equals("") && strNumberB.equals("")) {
-                    Snackbar.make(view, "Please enter a number and ratio!", Snackbar.LENGTH_LONG)
-                            .show();
-                } else if(strNumberA.equals("") && strNumberB.equals("")) {
-                    Snackbar.make(view, "Please enter a number!", Snackbar.LENGTH_LONG)
-                            .show();
-                } else if(strRatioA.equals("") || strRatioB.equals("")) {
-                    Snackbar.make(view, "Please enter a ratio!", Snackbar.LENGTH_LONG)
-                            .show();
-                } else if (strNumberB.equals("") || strNumberB.equals("0")) {
-                    answerNumB(strRatioA, strRatioB, strNumberA, Display_Scrn);
-                } else if (strNumberA.equals("") || strNumberA.equals("0")) {
-                    answerNumA(strRatioA, strRatioB, strNumberB, Display_Scrn);
-                } else if(!strNumberA.equals("") && !strNumberB.equals("")){
-                    Snackbar.make(view, "Please leave one number empty to calculate!", Snackbar.LENGTH_LONG)
-                            .show();
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if(charSequence.length() > 0) {
+                    float RatioA = Float.valueOf(Ratio_A.getText().toString());
+                    float RatioB = Float.valueOf(Ratio_B.getText().toString());
+                    float NumberA = Float.valueOf(Number_A.getText().toString());
+                    float totalNumB = NumberA * (RatioB / RatioA);
+                    if(changeText) {
+                        changeText = false;
+                        Number_B.setText(String.valueOf(totalNumB));
+                    }
+                    else {
+                        changeText = true;
+                    }
                 }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
     }
 
-    private void answerNumA (String strRatioA, String strRatioB, String strNumberB, TextView Display_Scrn) {
-        float RatioA = Float.parseFloat(strRatioA);
-        float RatioB = Float.parseFloat(strRatioB);
-        float NumberB = Float.parseFloat(strNumberB);
-        float totalNumA = NumberB * (RatioA / RatioB);
-        String display = "Answer:\n   Ratio A: " + RatioA + "  Ratio B: " + RatioB + "  \n   Missing Number A: " + totalNumA + "  Number B: " + NumberB;
-        Display_Scrn.setText(String.valueOf(display));
-    }
+    private void numberBListener (final EditText Number_A, final EditText Number_B, final EditText Ratio_A, final EditText Ratio_B) {
+        Number_B.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-    private void answerNumB (String strRatioA, String strRatioB, String strNumberA, TextView Display_Scrn) {
-        float RatioA = Float.parseFloat(strRatioA);
-        float RatioB = Float.parseFloat(strRatioB);
-        float NumberA = Float.parseFloat(strNumberA);
-        float totalNumB = NumberA * (RatioB / RatioA);
-        String display = "Answer:\n   Ratio A: " + RatioA + "  Ratio B: " + RatioB + "  \n   Number A: " + NumberA + "  Missing Number B: " + totalNumB;
-        Display_Scrn.setText(String.valueOf(display));
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                if (charSequence.length() > 0) {
+                    float RatioA = Float.valueOf(Ratio_A.getText().toString());
+                    float RatioB = Float.valueOf(Ratio_B.getText().toString());
+                    float NumberB = Float.valueOf(Number_B.getText().toString());
+                    float totalNumA = NumberB * (RatioA / RatioB);
+                    if (changeText) {
+                        changeText = false;
+                        Number_A.setText(String.valueOf(totalNumA));
+                    } else {
+                        changeText = true;
+                    }
+                }
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     @Override
