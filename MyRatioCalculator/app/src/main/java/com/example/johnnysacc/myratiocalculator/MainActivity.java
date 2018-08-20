@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Calculate();
+        mainApp();
     }
 
-    private void Calculate(){
+    private void mainApp(){
         final EditText Ratio_A = findViewById(R.id.Ratio_Value_A);
         final EditText Ratio_B = findViewById(R.id.Ratio_Value_B);
         final EditText Number_A = findViewById(R.id.Number_Value_A);
