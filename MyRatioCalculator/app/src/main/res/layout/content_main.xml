@@ -69,6 +69,18 @@
         android:text="@string/Ratio_Symbol"
         android:textSize="@dimen/text_Size" />
 
+    <TextView
+        android:id="@+id/with_numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/Ratio_Symbol"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/Vertical_Space"
+        android:gravity="center"
+        android:text="@string/With_Numbers"
+        android:textSize="@dimen/text_Size" />
+
     <EditText
         android:id="@+id/Number_Value_A"
         android:layout_width="@dimen/Ratio_Input_Size"
@@ -96,18 +108,6 @@
         android:hint="@string/Ratio_Number_B"
         android:inputType="number"
         android:textColorHint="@color/colorRatioInput"
-        android:textSize="@dimen/text_Size" />
-
-    <TextView
-        android:id="@+id/with_numbers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="false"
-        android:layout_below="@+id/Ratio_Symbol"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/Vertical_Space"
-        android:gravity="center"
-        android:text="@string/With_Numbers"
         android:textSize="@dimen/text_Size" />
 
     <TextView
