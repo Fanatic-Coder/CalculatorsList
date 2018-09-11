@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="@dimen/Vertical_Space"
         android:gravity="center"
         android:text="@string/RatioOf"
         android:textSize="@dimen/text_Size"
@@ -53,6 +53,22 @@
         android:textColorHint="@color/colorRatioInput"
         android:textSize="@dimen/text_Size" />
 
+    <TextView
+        android:id="@+id/Ratio_Symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_below="@id/Ratio_Text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="@dimen/Horizontal_Space"
+        android:layout_marginRight="@dimen/Horizontal_Space"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="@dimen/Vertical_Space"
+        android:gravity="center"
+        android:text="@string/Ratio_Symbol"
+        android:textSize="@dimen/text_Size" />
+
     <EditText
         android:id="@+id/Number_Value_A"
         android:layout_width="@dimen/Ratio_Input_Size"
@@ -83,18 +99,15 @@
         android:textSize="@dimen/text_Size" />
 
     <TextView
-        android:id="@+id/Ratio_Symbol"
+        android:id="@+id/with_numbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
-        android:layout_below="@id/Ratio_Text"
+        android:layout_below="@+id/Ratio_Symbol"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginLeft="@dimen/Horizontal_Space"
-        android:layout_marginRight="@dimen/Horizontal_Space"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="@dimen/Vertical_Space"
-        android:text="@string/Ratio_Symbol"
+        android:gravity="center"
+        android:text="@string/With_Numbers"
         android:textSize="@dimen/text_Size" />
 
     <TextView
@@ -107,44 +120,8 @@
         android:layout_marginLeft="@dimen/Horizontal_Space"
         android:layout_marginRight="@dimen/Horizontal_Space"
         android:layout_marginTop="@dimen/Vertical_Space"
-        android:text="@string/Ratio_Symbol"
-        android:textSize="@dimen/text_Size" />
-
-    <TextView
-        android:id="@+id/with_numbers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="false"
-        android:layout_below="@+id/Ratio_Symbol"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/Vertical_Space"
         android:gravity="center"
-        android:text="@string/With_Numbers"
-        android:textSize="@dimen/text_Size" />
-
-    <Button
-        android:id="@+id/CalculateButton"
-        android:layout_width="@dimen/Calc_Btn_Width"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/Vertical_Space"
-        android:layout_below="@+id/ratio_Symbol2"
-        android:background="@color/colorCalculateButton"
-        android:textColor="@color/colorCalculateText"
-        android:text="@string/Calculate_Button"
-        android:textSize="@dimen/Calc_Text_Size"/>
-
-    <TextView
-        android:id="@+id/DisplayScreen"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/CalculateButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/Vertical_Space"
-        android:background="@color/colorDisplayScrnBckgr"
-        android:gravity="start"
-        android:hint="@string/Display_Screen"
-        android:textColorHint="@color/colorDisplayScrnText"
+        android:text="@string/Ratio_Symbol"
         android:textSize="@dimen/text_Size" />
 
 </RelativeLayout>
