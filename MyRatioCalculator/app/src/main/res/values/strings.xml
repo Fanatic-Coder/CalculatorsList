@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyRatioCalculator</string>
+    <string name="app_name">My Ratio Calculator</string>
     <string name="action_settings">Settings</string>
     <string name="RatioOf">Ratio of</string>
     <string name="Ratio_Input_A">Enter Ratio A</string>
@@ -8,6 +8,4 @@
     <string name="With_Numbers">with numbers</string>
     <string name="Ratio_Number_A">Enter Number A</string>
     <string name="Ratio_Number_B">Enter Number B</string>
-    <string name="Calculate_Button">Calculate</string>
-    <string name="Display_Screen">Answer:</string>
 </resources>
